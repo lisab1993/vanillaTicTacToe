@@ -3,12 +3,20 @@ body {
 }
 /* parent container and row containers */
 .container {
+    background-color: pink;
+}
+.footer {
+    display: flex;
+    justify-content: center;
+    background-color: lightskyblue;
+    height: 4rem;
+}
+.gameboard {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 18rem;
-    background-color: pink;
+    height: 15rem;
     font-size: 3rem;
 }
 .topRow {
