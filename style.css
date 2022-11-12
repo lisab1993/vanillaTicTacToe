@@ -1,3 +1,144 @@
-.pretty {
+body {
+    background-color: gray;
+}
+/* parent container and row containers */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 18rem;
     background-color: pink;
+    font-size: 3rem;
+}
+.topRow {
+    display: flex;
+    justify-content: center;
+    width:11rem;
+    height: 3rem;
+    margin-bottom: .5rem;
+}
+.midRow {
+    display: flex;
+    justify-content: center;
+    width:11rem;
+    height: 3rem;
+    margin-bottom: .5rem;
+}
+.bottomRow {
+    display: flex;
+    justify-content: center;
+    width:11rem;
+    height: 3rem;
+}
+
+/* lines */
+.hztLine {
+    width: 13rem;
+    height: .2rem;
+    border-top: .1rem solid black;
+    padding-top: .5rem;
+}
+.vertLine {
+    /* display: flex; */
+    /* flex-direction: column; */
+    border-left: .1rem solid black;
+    border-right: .1rem solid black;
+    width: 3.9rem;
+    height: 13rem;
+    justify-content: space-around;
+    position: absolute;
+}
+
+/* top row spans */
+.tLeft {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: red;
+    border: solid black .1rem;
+    width: 3rem;
+    text-align: center;
+    margin-right: 1rem;
+}
+.tMid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: orangered;
+    border: solid black .1rem;
+    width: 3rem;
+    text-align: center;
+    margin-right: 1rem;
+}
+.tRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: orange;
+    border: solid black .1rem;
+    width: 3rem;
+    text-align: center;
+}
+
+/* middle row spans */
+.mLeft {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: gold;
+    border: solid black .1rem;
+    width: 3rem;
+    text-align: center;
+    margin-right: 1rem;
+}
+.mMid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: greenyellow;
+    border: solid black .1rem;
+    width: 3rem;
+    text-align: center;
+    margin-right: 1rem;
+}
+.mRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: limegreen;
+    border: solid black .1rem;
+    width: 3rem;
+    text-align: center;
+}
+
+/* bottom row spans */
+.bLeft {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: aqua;
+    border: solid black .1rem;
+    width: 3rem;
+    text-align: center;
+    margin-right: 1rem;
+}
+.bMid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: deepskyblue;
+    border: solid black .1rem;
+    width: 3rem;
+    text-align: center;
+    margin-right: 1rem;
+}
+.bRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: mediumslateblue;
+    border: solid black .1rem;
+    width: 3rem;
+    text-align: center;
 }
