@@ -52,6 +52,36 @@ window.onload = function () {
 btn.addEventListener("click", function () {
   oneTurn();
 });
+
+tLeft.addEventListener("click", function () {
+    tLeft.innerHTML = "X"
+})
+tMid.addEventListener("click", function () {
+    tMid.innerHTML = "X"
+})
+tRight.addEventListener("click", function () {
+    tRight.innerHTML = "X"
+})
+
+mLeft.addEventListener("click", function () {
+    mLeft.innerHTML = "X"
+})
+mMid.addEventListener("click", function () {
+    mMid.innerHTML = "X"
+})
+mRight.addEventListener("click", function () {
+    mRight.innerHTML = "X"
+})
+
+bLeft.addEventListener("click", function () {
+    bLeft.innerHTML = "X"
+})
+bMid.addEventListener("click", function () {
+    bMid.innerHTML = "X"
+})
+bRight.addEventListener("click", function () {
+    bRight.innerHTML = "X"
+})
 //make random function to pick who goes first -player or computer
 //keep track of whose turn it is
 //player will be 1, computer will be 0
