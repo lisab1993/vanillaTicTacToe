@@ -148,8 +148,6 @@ function checkWinner() {
 
 function computerChoice() {
   disableSquares();
-
-
   let bestOptionsAvailable = 0;
   let lesserOptionsAvailable = 0;
   let selection = null;
@@ -188,15 +186,26 @@ function computerChoice() {
       lesserOptions.splice(lesserOptions.indexOf(selection), 1);
     }
   }
+
   removeIndex = openSquares.indexOf(selection);
-  console.log(removeIndex);
   openSquares.splice(removeIndex, 1);
   currentTurn = 1;
-  displayTurn.innerHTML = "It's the player's turn";
-  enableOpenSquares();
-  console.log(openSquares);
-  checkWinner();
-  return true;
+  totalTurns += 1;
+  console.log(totalTurns, "total turns");
+  winner = checkWinner();
+  if (winner === 0) {
+    disableSquares();
+    displayTurn.innerHTML = "The computer wins!";
+  } else if (winner === 1) {
+    disableSquares();
+    displayTurn.innerHTML = "The player wins!";
+  } else if ((winner === "no winner") & (totalTurns === 9)) {
+    displayTurn.innerHTML = "catscan";
+  } else if (winner === "no winner") {
+    displayTurn.innerHTML = "It's the player's turn";
+    enableOpenSquares();
+    return true;
+  }
 }
 
 function randomPlayer() {
@@ -214,6 +223,7 @@ function randomPlayer() {
 }
 
 function oneTurn(square) {
+  square.innerHTML = "X";
   winner = checkWinner();
   if (winner === 0) {
     disableSquares();
@@ -221,21 +231,30 @@ function oneTurn(square) {
   } else if (winner === 1) {
     disableSquares();
     displayTurn.innerHTML = "The player wins!";
-  } else {
+  } else if (winner === 'no winner' && totalTurns === 9) {
+    disableSquares();
+    displayTurn.innerHTML = 'Catscan'
+  } else if (winner === "no winner" && totalTurns < 9) {
     currentTurn = 0;
     displayTurn.innerHTML = "It's the computer's turn";
     removeIndex = openSquares.indexOf(square);
     openSquares.splice(removeIndex, 1);
+    if (bestOptions.includes(square)) {
+      bestOptions.splice(bestOptions.indexOf(square), 1);
+    } else if (lesserOptions.includes(square)) {
+      lesserOptions.splice(lesserOptions.indexOf(square), 1);
+    }
     setTimeout(function () {
       computerChoice();
     }, 1000);
   }
   totalTurns += 1;
+  console.log(totalTurns, "total turns");
 }
 
 window.onload = function () {
+  console.log(totalTurns, "total turns");
   currentTurn = randomPlayer();
-  totalTurns += 1;
 };
 
 btn.addEventListener("click", function () {
@@ -243,41 +262,32 @@ btn.addEventListener("click", function () {
 });
 
 zero.addEventListener("click", function () {
-  zero.innerHTML = "X";
   oneTurn(zero);
 });
 one.addEventListener("click", function () {
-  one.innerHTML = "X";
   oneTurn(one);
 });
 two.addEventListener("click", function () {
-  two.innerHTML = "X";
   oneTurn(two);
 });
 
 three.addEventListener("click", function () {
-  three.innerHTML = "X";
   oneTurn(three);
 });
 four.addEventListener("click", function () {
-  four.innerHTML = "X";
   oneTurn(four);
 });
 five.addEventListener("click", function () {
-  five.innerHTML = "X";
   oneTurn(five);
 });
 
 six.addEventListener("click", function () {
-  six.innerHTML = "X";
   oneTurn(six);
 });
 seven.addEventListener("click", function () {
-  seven.innerHTML = "X";
   oneTurn(seven);
 });
 eight.addEventListener("click", function () {
-  eight.innerHTML = "X";
   oneTurn(eight);
 });
 //make random function to pick who goes first -player or computer
