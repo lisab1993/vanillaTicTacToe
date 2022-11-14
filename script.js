@@ -10,7 +10,6 @@ const six = document.querySelector("#six");
 const seven = document.querySelector("#seven");
 const eight = document.querySelector("#eight");
 
-const btn = document.querySelector("#btn");
 const displayTurn = document.querySelector("#displayTurn");
 const boardArr = [zero, one, two, three, four, five, six, seven, eight];
 let removeIndex = null;
@@ -257,9 +256,6 @@ window.onload = function () {
   currentTurn = randomPlayer();
 };
 
-btn.addEventListener("click", function () {
-  oneTurn();
-});
 
 zero.addEventListener("click", function () {
   oneTurn(zero);
@@ -290,15 +286,3 @@ seven.addEventListener("click", function () {
 eight.addEventListener("click", function () {
   oneTurn(eight);
 });
-//make random function to pick who goes first -player or computer
-//keep track of whose turn it is
-//player will be 1, computer will be 0
-//if it's the player's turn, ask for their move
-//if it's the computer's turn, the computer will decide what to do - more to follow on this.
-//when it's the player's turn, they'll click on a box, and then be asked if they want to keep that move - not with a prompt
-//the game ends if someone wins, or there's a draw.
-//player is asked if they want to play again
-
-//if a square has a value in it, disable it for the rest of the game.
-//if it's not the player's turn, don't let them click on anything.
-//if it's the player's turn, let them click on any blank square

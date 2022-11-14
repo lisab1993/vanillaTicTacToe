@@ -4,12 +4,15 @@ body {
 /* containers */
 .container {
     background-color: pink;
+    font-family: 'Signika Negative', sans-serif;
 }
 .footer {
     display: flex;
     justify-content: center;
     background-color: lightskyblue;
     height: 4rem;
+    align-items: center;
+    font-size: 2rem;
 }
 .gameboard {
     display: flex;
